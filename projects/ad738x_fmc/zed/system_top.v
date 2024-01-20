@@ -174,9 +174,10 @@ module system_top (
     .iic_mux_sda_t (iic_mux_sda_t_s),
     .ad738x_spi_sdo (spi_sdo),
     .ad738x_spi_sdo_t (),
-    .ad738x_spi_sdi ({spi_sdib, spi_sdia}),
+    .ad738x_spi_sdi (spi_sdia),
     .ad738x_spi_cs (spi_cs),
     .ad738x_spi_sclk (spi_sclk),
+    .ad738x_spi_three_wire (),
     .otg_vbusoc (otg_vbusoc),
     .spdif (spdif));
 
