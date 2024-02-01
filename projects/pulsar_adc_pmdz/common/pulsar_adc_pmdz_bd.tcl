@@ -6,11 +6,11 @@
 create_bd_intf_port -mode Master -vlnv analog.com:interface:spi_master_rtl:1.0 pulsar_adc_spi
 source $ad_hdl_dir/library/spi_engine/scripts/spi_engine.tcl
 
-set data_width    32
+set data_width    16
 set async_spi_clk 1
 set num_cs        1
 set num_sdi       1
-set num_sdo       1
+set num_sdo       0
 set sdi_delay     1
 set echo_sclk     0
 
