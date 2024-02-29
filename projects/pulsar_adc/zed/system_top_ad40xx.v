@@ -86,12 +86,12 @@ module system_top (
   // ad400x SPI configuration interface
 
   input           ad40xx_spi_sdi,
-  output          ad40xx_spi_sdo,
   output          ad40xx_spi_sclk,
   output          ad40xx_spi_cs,
 
   inout           ad40xx_amp_pd,
-  inout           ad7944_turbo
+  inout           ad7944_turbo,
+  inout           ad7944_mode
 );
 
   // internal signals
@@ -108,15 +108,15 @@ module system_top (
 
   // instantiations
 
-  assign gpio_i[63:34] = gpio_o[63:34];
+  assign gpio_i[63:35] = gpio_o[63:35];
 
   ad_iobuf #(
-    .DATA_WIDTH(2)
+    .DATA_WIDTH(3)
   ) i_admp_pd_iobuf (
-    .dio_t(gpio_t[33:32]),
-    .dio_i(gpio_o[33:32]),
-    .dio_o(gpio_i[33:32]),
-    .dio_p({ad7944_turbo,ad40xx_amp_pd}));
+    .dio_t(gpio_t[34:32]),
+    .dio_i(gpio_o[34:32]),
+    .dio_o(gpio_i[34:32]),
+    .dio_p({ad7944_mode,ad7944_turbo,ad40xx_amp_pd}));
 
   ad_iobuf #(
     .DATA_WIDTH(32)
@@ -206,7 +206,7 @@ module system_top (
     .pulsar_adc_spi_cs(ad40xx_spi_cs),
     .pulsar_adc_spi_sclk(ad40xx_spi_sclk),
     .pulsar_adc_spi_sdi(ad40xx_spi_sdi),
-    .pulsar_adc_spi_sdo(ad40xx_spi_sdo),
+    .pulsar_adc_spi_sdo(),
     .pulsar_adc_spi_sdo_t(),
     .pulsar_adc_spi_three_wire(),
     .otg_vbusoc (otg_vbusoc),

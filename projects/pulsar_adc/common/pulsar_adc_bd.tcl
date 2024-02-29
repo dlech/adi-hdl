@@ -11,7 +11,7 @@ set data_width    32
 set async_spi_clk 1
 set num_cs        1
 set num_sdi       1
-set num_sdo       1
+set num_sdo       0
 set sdi_delay     1
 set echo_sclk     0
 
