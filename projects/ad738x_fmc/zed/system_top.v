@@ -104,7 +104,9 @@ module system_top (
 
   // instantiations
 
-  assign gpio_i[63:32] = gpio_o[63:32];
+  assign gpio_i[63:33] = gpio_o[63:33];
+  assign gpio_i[32] = spi_sdib;
+
   ad_iobuf #(
     .DATA_WIDTH(32)
   ) i_iobuf (
@@ -174,7 +176,7 @@ module system_top (
     .iic_mux_sda_t (iic_mux_sda_t_s),
     .ad738x_spi_sdo (spi_sdo),
     .ad738x_spi_sdo_t (),
-    .ad738x_spi_sdi ({spi_sdib, spi_sdia}),
+    .ad738x_spi_sdi (spi_sdia),
     .ad738x_spi_cs (spi_cs),
     .ad738x_spi_sclk (spi_sclk),
     .otg_vbusoc (otg_vbusoc),
