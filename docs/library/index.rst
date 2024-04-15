@@ -14,8 +14,12 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   axi_dmac/index
-   spi_engine/index
+   axi_adxcvr/index
+   axi_pwm_gen/index
    jesd204/index
    axi_adxcvr/index
+   axi_dmac/index
+   axi_pwm_gen/index
+   jesd204/index
+   spi_engine/index
    xilinx/index
