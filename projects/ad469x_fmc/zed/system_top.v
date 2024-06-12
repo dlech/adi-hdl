@@ -97,6 +97,7 @@ module system_top (
 
   // internal signals
 
+  wire            spi_cs;
   wire    [63:0]  gpio_i;
   wire    [63:0]  gpio_o;
   wire    [63:0]  gpio_t;
@@ -110,6 +111,10 @@ module system_top (
   // instantiations
 
   assign gpio_i[63:34] = 31'b0;
+
+  // duplicate SPI Engine CS on CNV pin as well as SPI CS pin for 4-wire mode
+  assign ad469x_spi_cs = spi_cs;
+  assign ad469x_spi_cnv = spi_cs;
 
   ad_iobuf #(
     .DATA_WIDTH(1)
@@ -207,10 +212,10 @@ module system_top (
     .ad469x_spi_sdo (ad469x_spi_sdo),
     .ad469x_spi_sdo_t (),
     .ad469x_spi_sdi (ad469x_spi_sdi),
-    .ad469x_spi_cs (ad469x_spi_cs),
+    .ad469x_spi_cs (spi_cs),
     .ad469x_spi_sclk (ad469x_spi_sclk),
     .ad469x_spi_busy(ad469x_busy_alt_gp0),
-    .ad469x_spi_cnv(ad469x_spi_cnv),
+    .ad469x_spi_cnv(),
     .otg_vbusoc (otg_vbusoc),
     .spdif (spdif));
 
