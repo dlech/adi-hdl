@@ -8,4 +8,6 @@ G6        FMC_LA00_CC_P          CS_N               ad469x_spi_cs          LVCMO
 G7        FMC_LA00_CC_N          CNV_FMC            ad469x_spi_cnv         LVCMOS25    #N/A
 H7        FMC_LA02_P             SDI                ad469x_spi_sdo         LVCMOS25    #N/A
 H10       FMC_LA04_P             RESET              ad469x_resetn          LVCMOS25    #N/A
-H8        FMC_LA02_N             GP0                ad469x_busy_alt_gp0    LVCMOS25    #N/A
+H8        FMC_LA02_N             GP0                ad469x_busy_alt_gp0_h8 LVCMOS25    #N/A
+G9        FMC_LA03_P             GP0                ad469x_busy_alt_gp0_g9 LVCMOS25    #N/A
+G10       FMC_LA03_N             GP0                ad469x_busy_alt_gp0_g10 LVCMOS25    #N/A

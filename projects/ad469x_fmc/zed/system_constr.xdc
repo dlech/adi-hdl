@@ -11,7 +11,9 @@ set_property -dict {PACKAGE_PIN M19 IOSTANDARD LVCMOS25} [get_ports ad469x_spi_c
 set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS25} [get_ports ad469x_spi_cnv]       ; ## G07  FMC_LA00_CC_N  IO_L13N_T2_MRCC_34
 
 set_property -dict {PACKAGE_PIN M21 IOSTANDARD LVCMOS25} [get_ports ad469x_resetn]        ; ## H10  FMC_LA04_P     IO_L15P_T2_DQS_34
-set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS25} [get_ports ad469x_busy_alt_gp0]  ; ## H08  FMC_LA02_N     IO_L20N_T3_34
+set_property -dict {PACKAGE_PIN P18 IOSTANDARD LVCMOS25} [get_ports ad469x_busy_alt_gp0_h8]  ; ## H08  FMC_LA02_N     IO_L20N_T3_34
+set_property -dict {PACKAGE_PIN N22 IOSTANDARD LVCMOS25} [get_ports ad469x_busy_alt_gp0_g9]  ; ## G09  FMC_LA03_P     IO_L16P_T2_34
+set_property -dict {PACKAGE_PIN P22 IOSTANDARD LVCMOS25} [get_ports ad469x_busy_alt_gp0_g10] ; ## G10  FMC_LA03_N     IO_L16N_T2_34
 
 # rename auto-generated clock for SPIEngine to spi_clk - 160MHz
 # NOTE: clk_fpga_0 is the first PL fabric clock, also called $sys_cpu_clk
